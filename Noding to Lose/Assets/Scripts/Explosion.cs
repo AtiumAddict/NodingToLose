@@ -48,7 +48,7 @@ public class Explosion : MonoBehaviour
         {
             c.enabled = false;
         }
-        //Destroy(bomb.gameObject, 3.1f);                                                                   // Destroy the exploding bomb.
+        //Destroy(bomb.gameObject, 3.1f);                                                           // Destroy the exploding bomb.
     }
 
 }

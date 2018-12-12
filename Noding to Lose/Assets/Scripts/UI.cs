@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour {
-    
+public class UI : MonoBehaviour
+{
     AudioManager audioManager;
 
     private void Start()
@@ -23,6 +23,4 @@ public class UI : MonoBehaviour {
         Debug.Log("APPLICATION QUIT!");
         Application.Quit();
     }
-
-
 }

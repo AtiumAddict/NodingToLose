@@ -40,17 +40,20 @@ public class CubeTrigger : MonoBehaviour
 
         //rb = cubeManager.GetComponent<Rigidbody>();
 
-        //rb.velocity = Vector3.zero;                                                                                 // Stop the Cube Manager.
+        //rb.velocity = Vector3.zero;                                                                                
 
-        cubeManager.transform.position = GetNearestPointOnGridGen(cubeManager.transform.position);                  // Snap the Cube Manager to the grid.
+        cubeManager.transform.position = GetNearestPointOnGridGen(cubeManager.transform.position);  // Snap the Cube Manager to the grid.
 
         if (other.CompareTag("Cube") && other.transform.parent == indManager)
         {
-            if (other.gameObject.GetComponent<Renderer>().material.name != GetComponent<Renderer>().material.name)  // If the 2 cubes have the same color, destroy them.
+            // If the 2 cubes have the same color, destroy them.
+            if (other.gameObject.GetComponent<Renderer>().material.name != GetComponent<Renderer>().material.name)  
             {
                 other.gameObject.transform.parent = null;
-                other.gameObject.transform.parent = cubeManager.transform;                                          // Make the independent cube a child of the Cube Manager
-                other.gameObject.transform.position = GetNearestPointOnGridGen(other.transform.position);           // Snap the cube to the grid.
+                // Make the independent cube a child of the Cube Manager
+                other.gameObject.transform.parent = cubeManager.transform;
+                // Snap the cube to the grid
+                other.gameObject.transform.position = GetNearestPointOnGridGen(other.transform.position);   
                 audioManager.PlaySound("connection");
                 if (other.transform.position == transform.position)
                 {
@@ -76,7 +79,8 @@ public class CubeTrigger : MonoBehaviour
         }
     }
 
-    public Vector3 GetNearestPointOnGridGen(Vector3 position)                                                       // Calculate the nearest round Vector3 in the grid.
+    // Calculate the nearest round Vector3 in the grid.
+    public Vector3 GetNearestPointOnGridGen(Vector3 position)                                                      
     {
         int xRound = Mathf.RoundToInt(position.x);
         int yRound = Mathf.RoundToInt(position.y);

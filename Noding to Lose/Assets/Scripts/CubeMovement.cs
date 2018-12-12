@@ -10,7 +10,7 @@ public class CubeMovement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();                 // Set rb as the RigidBody of the CubeManager.
+        rb = GetComponent<Rigidbody>(); // Set rb as the RigidBody of the CubeManager.
     }
 
     void Update()
